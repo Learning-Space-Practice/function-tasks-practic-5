@@ -27,11 +27,7 @@ console.log(res2);
 
 const ar3 = [4, '5', 6];
 let res3;
-let callBack3 = (item) => {
-    if(typeof item === 'number'){
-     return console.log(true)
-    }
-}
+let callBack3 =  item => typeof item === 'number'
 
 res3 = ar3.filter(callBack3);
 
@@ -40,14 +36,8 @@ console.log(res3);
 // Task 4
 // Допишите анонимную стрелочную функцию внутри filter такую, что принимает элементы массива из filter и возвращает true если это число.
 let res4;
-res4 = ar3.filter(
-    (item) => {
-        if(typeof item === 'number'){
-          return console.log(true)
-        } else {console.log(false)}
-      
-    }
-);
+res4 = ar3.filter( item => typeof item === 'number')
+
  // сюда в скобки дописываете стрелочную функцию
 
 console.log(res4);
@@ -57,13 +47,7 @@ console.log(res4);
 
 const ar5 = ['GaLaxY', 'InFILtratoR', 'DaTaPad', 'APeX hQ'];
 let res5 = [];
- let callBack5 = (arr5) => {
-  for(let i = 0;i < ar5.length;i++){
-     let res = ar5[i].toLowerCase()
-     res5.push(res)
-  }
-  console.log(res5)
- }
+ let callBack5 = item => res5.push(item.toLowerCase())
 
  ar5.forEach(callBack5);
 
@@ -74,9 +58,7 @@ console.log(res5);
 // Допишите анонимную стрелочную функцию внутри forEach такую, что принимает элементы массива из forEach и пушит их в res6 приведенные к toLowerCase().
 
 let res6 = [];
-ar5.forEach( item => {
-  res6.push(item)
-}); // сюда в скобки дописываете стрелочную функцию
+ar5.forEach( item => res6.push(item.toLowerCase())); // сюда в скобки дописываете стрелочную функцию
 
 console.log(res6);
 
@@ -84,14 +66,9 @@ console.log(res6);
 // Task 7
 // Напишите функцию callBack7 такую, что принимает элементы массива ar7 и возвращет true если они больше 10.
 
-const ar7 = [5,7, 10, 20, 30, 60];
+const ar7 = [50, 70, 100, 20, 30, 60];
 let res7;
- let callBack7 = (index) => {
-   console.log(index < 10)
-   if(index > 10){
-     return true
-   }else {return false}
- }
+ let callBack7 = (currentValue) => currentValue > 10;
 
 res7 = ar7.every(callBack7);
 
@@ -101,18 +78,19 @@ console.log(res7);
 // Допишите анонимную стрелочную функцию внутри every такую, что принимает элементы массива ar7 из every и возвращет true если они больше 10.
 
 let res8;
-// res8 = ar7.every();// сюда в скобки дописываете стрелочную функцию
+res8 = ar7.every((currentValue) => currentValue < 70);// сюда в скобки дописываете стрелочную функцию
 
 console.log(res8);
 
 // Task 9
 // Напишите функцию callBack9 такую, что принимает элементы массива ar9 и возвращет true если тип данных элемента boolean.
 
-const ar9 = [5, 7, false, 10, 20, 30, 60];
+const ar9 = [6, 8, true,5];
 let res9;
-// let callBack9 = 
+let callBack9 = (element) => typeof element === 'boolean'
 
-// res9 = ar9.some(callBack9);
+
+res9 = ar9.some(callBack9);
 
 console.log(res9);
 
@@ -121,7 +99,7 @@ console.log(res9);
 // Допишите анонимную стрелочную функцию внутри some такую, что принимает элементы массива ar9 из some и возвращет true если тип данных элемента boolean.
 
 let res10;
-// res10 = ar9.some();// сюда в скобки дописываете стрелочную функцию
+res10 = ar9.some((element) => typeof element === 'boolean');// сюда в скобки дописываете стрелочную функцию
 
 console.log(res10);
 
